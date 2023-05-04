@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+resultTracker = []
+let playCycles = 5
+
+    function fullGameplay () {
+        // Errybody got choices
+        choices = ['r','p','s'];
+        function getComputerChoice() {
+            let randomChoice = Math.floor(Math.random() * choices.length)
+            return (choices[randomChoice])
+        }
+        // So? What's it gonna be?
+        function getPlayerChoice() {
+            let playerChoice = prompt("Type r,p,or s").toLowerCase();
+            return(playerChoice)
+        }
+    function playGame() {
+        let myChoice = getPlayerChoice()
+        let compChoice = getComputerChoice()
+
+    let result = '';
+
+        // I want to play a game [-__-]
+        while (compChoice === ('r')){
+            if (myChoice === 'r' || myChoice === 'rock'){
+                return("Its a draw")
+            }
+            else if (myChoice === 'p' || myChoice === 'paper'){
+                result = "You Win!"
+            }
+            else {
+                result = "You Suck"
+            }
+            break
+        }
+        while (compChoice === ('p')){
+            if (myChoice === 'p' || myChoice === 'paper'){
+                result = "Its a draw"
+            }
+            else if (myChoice === 'r' || myChoice === 'rock'){
+                result = "You Win!"
+            }
+            else {
+                result = "You Suck"
+            }
+            break
+        }
+        while (compChoice === ('s')){
+            if (myChoice === 's' || myChoice === 'scissors'){
+                result = "Its a draw"
+            }
+            else if (myChoice === 'p' || myChoice === 'paper'){
+                result = "You Win!"
+            }
+            else {
+                result = "You Suck"
+            }
+            break;
+        }
+        resultTracker.push(result)
+        return result;
+    }
+
+        return playGame();
+    
+}
+
+while (playCycles >0) {
+    alert(fullGameplay());
+    playCycles --;
+}
+console.log(resultTracker)
+// Sheesh that's some beautiful code
+    </script>
+</body>
+</html>
